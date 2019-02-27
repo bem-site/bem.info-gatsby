@@ -3,9 +3,10 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import { Nav } from './Nav'
 import "./layout.css"
 
-const Layout = ({ children }) => (
+const Layout = ({ pageContext, children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -27,6 +28,10 @@ const Layout = ({ children }) => (
             paddingTop: 0,
           }}
         >
+        {
+          console.log(`data`, data)
+        }
+          <Nav model={pageContext.model} page={pageContext.page}/>
           <main>{children}</main>
           <footer>
             © {new Date().getFullYear()}, Built with

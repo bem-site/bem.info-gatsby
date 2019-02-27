@@ -1,7 +1,17 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require('path');
+const model = require('./model/model');
 
-// You can delete this file if you're not using it
+module.exports.createPages = ({ actions, graphql }) => {
+    const { createPage } = actions;
+
+    const articleTemplate = path.resolve(`src/templates/article.tsx`)
+
+    model.forEach(page => createPage({
+            path: page.url,
+            component: articleTemplate,
+            context: {
+                model,
+                page
+            },
+    }));
+}
