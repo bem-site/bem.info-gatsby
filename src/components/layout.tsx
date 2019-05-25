@@ -28,16 +28,8 @@ const Layout = ({ pageContext, children }) => (
             paddingTop: 0,
           }}
         >
-        {
-          console.log(`data`, data)
-        }
           <Nav model={pageContext.model} page={pageContext.page}/>
           <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
         </div>
       </>
     )}
