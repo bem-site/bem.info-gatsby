@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby-plugin-intl'
+import { Link } from 'gatsby'
 
 export function Nav({ model, page }) {
   const site = page.site;
