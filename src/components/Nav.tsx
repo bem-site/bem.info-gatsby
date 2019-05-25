@@ -52,37 +52,6 @@ export function Nav({ model, page }) {
               }
             </h3>
           </li>
-
-          return {
-            elem: 'item',
-            elemMods: { current: isCurrent },
-            content: [
-              {
-                elem: 'title',
-                attrs: {
-                  style: `margin-left:${item.level * 16}px`
-                },
-                content: isCurrent ? title : {
-                  elem: 'link',
-                  attrs: { href: data.root + item.url },
-                  content: title
-                }
-              },
-              contents.length > 0 && {
-                elem: 'content',
-                elemMods: { visible: isCurrent },
-                attrs: {
-                  style: `margin-left:${item.level * 16}px`
-                },
-                content: contents.map(unit => ({
-                  elem: 'link',
-                  mix: { block: 'nav', elem: 'chapter' },
-                  attrs: { href: data.root + item.url + '#' + slugger.slug(unit.content) },
-                  content: unit.content
-                }))
-              }
-            ]
-          };
         })
       }
     </ul>
