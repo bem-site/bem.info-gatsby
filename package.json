@@ -1,28 +1,24 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "bem.info-gatsby",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "bem.info web-site built with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "gatsby": "^2.1.18",
-    "gatsby-image": "^2.0.30",
-    "gatsby-plugin-manifest": "^2.0.19",
-    "gatsby-plugin-offline": "^2.0.24",
-    "gatsby-plugin-react-helmet": "^3.0.7",
-    "gatsby-plugin-sharp": "^2.0.22",
-    "gatsby-plugin-typescript": "^2.0.9",
-    "gatsby-source-filesystem": "^2.0.23",
-    "gatsby-transformer-sharp": "^2.1.14",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
-    "react-helmet": "^5.2.0"
+    "gatsby": "2.7.1",
+    "gatsby-image": "2.1.1",
+    "gatsby-plugin-intl": "0.1.7",
+    "gatsby-plugin-typescript": "2.0.15",
+    "gatsby-source-filesystem": "2.0.37",
+    "prop-types": "15.7.2",
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
   },
   "devDependencies": {
-    "prettier": "^1.16.4"
+    "prettier": "1.17.1"
   },
   "keywords": [
+    "bem.info",
+    "bem",
     "gatsby"
   ],
   "license": "MIT",
@@ -36,9 +32,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/bem-site/bem.info-gatsby"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/bem-site/bem.info-gatsby/issues"
   }
 }
