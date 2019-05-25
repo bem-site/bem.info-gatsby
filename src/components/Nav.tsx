@@ -22,7 +22,7 @@ export function Nav({ model, page }) {
   }
 
   return (
-    <ul>
+    <ul style={{ float: 'left' }}>
       {
         model.filter(function (page) {
           if (!new RegExp('^' + site).test(page.url) || page.nav === false) { return false; }
