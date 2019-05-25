@@ -9,8 +9,8 @@ import SEO from "../components/seo"
 
 const IndexPage = (data) => (
   <Layout pageContext={data.pageContext}>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <pre>{JSON.stringify(data, null, 4)}</pre>
+    {/* <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} /> */}
+    <pre>{data.pageContext.page.title.ru || data.pageContext.page.title}</pre>
   </Layout>
 )
 
