@@ -7,11 +7,11 @@ module.exports.createPages = ({ actions, graphql }) => {
     const articleTemplate = path.resolve(`src/templates/article.tsx`)
 
     model.forEach(page => createPage({
-            path: page.url,
-            component: articleTemplate,
-            context: {
-                model,
-                page
-            },
+        path: page.url,
+        component: articleTemplate,
+        context: {
+            model,
+            page
+        },
     }));
 }
