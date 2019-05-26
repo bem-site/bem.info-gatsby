@@ -15,7 +15,7 @@ module.exports.createPages = ({ actions, graphql }) => {
 
         switch (page.type) {
             default:
-                template = path.resolve(`src/templates/article.tsx`);
+                template = path.resolve(`src/components/ArticlePage/ArticlePage.tsx`);
         }
 
         return createPage({
