@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import Slugger from 'github-slugger'
-import { Link } from 'gatsby'
 import { cn } from '@bem-react/classname'
+import { Link } from 'gatsby'
 
 import { Context } from '../Context/Context'
 import './Nav.css'
