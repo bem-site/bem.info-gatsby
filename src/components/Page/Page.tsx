@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import { cn } from '@bem-react/classname'
 
 import { Context } from '../Context/Context'
@@ -13,6 +14,10 @@ const Page = (data) => {
 
   return (
     <Context.Provider value={page}>
+      <Helmet>
+        <title>{page.title} / TODO</title>
+      </Helmet>
+
       <div className={cn('Page')({ promo: page.type === 'promo' })}>
         <Header className={cn('Page')('Head')}/>
         {/* <Sitemap className={cn('Page')('Sitemap')}/> */}
