@@ -1,0 +1,23 @@
+module.exports = {
+  root: true,
+  levels: {
+    'src/components': {}
+  },
+  modules: {
+    'bem-tools': {
+      plugins: {
+        create: {
+          templates: {
+            tsx: '.bem/templates/tsx.js'
+          },
+          techs: ['css', 'tsx'],
+          levels: {
+            'src/components': {
+              default: true
+            }
+          }
+        }
+      }
+    }
+  }
+}

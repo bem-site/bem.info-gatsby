@@ -17,6 +17,8 @@
     "react-helmet": "5.2.1"
   },
   "devDependencies": {
+    "bem": "2.0.0",
+    "bem-tools-create": "2.3.0",
     "prettier": "1.17.1"
   },
   "keywords": [
