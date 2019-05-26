@@ -1,8 +1,10 @@
 import React, { useContext } from 'react'
+import Slugger from 'github-slugger'
 import { Link } from 'gatsby'
 import { cn } from '@bem-react/classname'
 
 import { Context } from '../Context/Context'
+import './Nav.css'
 
 const cls = cn('Nav');
 
@@ -17,7 +19,7 @@ export function Nav({ className }) {
   }
 
   return (
-    <ul className={cls(null, [className])} style={{ float: 'left' }}>
+    <ul className={cls(null, [className])}>
       {
         page.model.filter(function (page) {
           if (!new RegExp('^' + site).test(page.url) || page.nav === false) { return false; }
@@ -36,16 +38,36 @@ export function Nav({ className }) {
         }).map(function (item) {
           var isCurrent = page.url === item.url,
             title = typeof item.title === 'string' ? item.title : item.title[lang],
+            levelStyle = { marginLeft: `${item.level * 16}px`},
             contents = item.contents || [];
-            // slugger = new (require('github-slugger'))();
 
-          return <li className={cls('Item')}>
-            <h3 className={cls('Title')}>
-              {isCurrent ?
-                title :
-                <Link to={item.url}>{title}</Link>
+          const slugger = new (Slugger)();
+
+          return <li className={cls('Item', { current: isCurrent })}>
+            <div className={cls('Title')} style={levelStyle}>
+              {
+                isCurrent ?
+                  title :
+                  <Link className={cls('Link')} to={item.url}>{title}</Link>
               }
-            </h3>
+            </div>
+
+            {
+              contents.length > 0 && (
+                <div className={cls('content', { visible: isCurrent })} style={levelStyle}>
+                  {
+                    contents.map(unit => (
+                      <Link
+                        className={cls('Link') + ' ' + cls('Chapter')}
+                        to={item.url + '#' + slugger.slug(unit.content)}
+                      >
+                        {unit.content}
+                      </Link>
+                    ))
+                  }
+                </div>
+              )
+            }
           </li>
         })
       }

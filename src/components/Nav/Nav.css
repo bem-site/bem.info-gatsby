@@ -1,0 +1,140 @@
+.Nav
+{
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.Nav-Item
+{
+    line-height: 1.3;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    word-break: break-word;
+}
+
+.Nav-Item:last-child
+{
+    padding-bottom: 70px;
+}
+
+.Nav-Item_current .Nav-Title,
+.Nav-Link
+{
+    padding: 8px 5px 8px 29px;
+}
+
+.Nav-Item_current .Nav-Title
+{
+    color: #000;
+
+    background: #fc0;
+}
+
+.Nav-Item:last-child
+{
+    margin-bottom: 20px;
+}
+
+.Nav-Item_current .Nav-Title::before
+{
+    transform: none;
+
+    background-image: url(Nav-Title_current.svg);
+}
+
+.Nav-Title
+{
+    position: relative;
+}
+
+.Nav-Title::before
+{
+    position: absolute;
+    top: 10px;
+    left: 11px;
+
+    width: 13px;
+    height: 13px;
+
+    content: "";
+
+    transform: rotate(-90deg);
+
+    background-image: url(Nav-Title.svg);
+    background-size: cover;
+}
+
+.Nav-Chapter
+{
+    font-size: 14px;
+    line-height: 1.2;
+
+    display: block;
+}
+
+.Nav-Content
+{
+    display: none;
+}
+
+.Nav-Content_visible
+{
+    display: block;
+}
+
+.Nav-Link
+{
+    display: block;
+
+    padding: 8px 10px 8px 30px;
+
+    transition: color 0.3s;
+    text-decoration: none;
+
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.Nav-Link:hover
+{
+    color: #fff;
+}
+
+@media (max-width: 1200px)
+{
+    .Nav
+    {
+        width: 233px;
+    }
+
+    .Nav-Title::before
+    {
+        position: absolute;
+        top: 12px;
+        left: 5px;
+
+        width: 9px;
+        height: 9px;
+    }
+
+    .Nav-Item_current .Nav-Title,
+    .Nav-Link
+    {
+        padding-left: 18px;
+    }
+}
+
+@media (max-width: 800px)
+{
+    .Nav
+    {
+        display: none;
+    }
+}
