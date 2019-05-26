@@ -13,17 +13,19 @@ module.exports.createPages = ({ actions, graphql }) => {
     model.forEach(page => {
         let template;
 
+        page.type = page.type || 'article';
+
         switch (page.type) {
             default:
-                template = path.resolve(`src/components/ArticlePage/ArticlePage.tsx`);
+                template = path.resolve(`src/components/Page/Page.tsx`);
         }
 
         return createPage({
             path: page.url,
             component: template,
             context: {
+                ...page,
                 model,
-                page,
                 langs,
                 lang
             },

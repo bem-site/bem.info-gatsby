@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'gatsby'
+import { cn } from '@bem-react/classname'
 
-export function Nav({ model, page }) {
+import { Context } from '../Context/Context'
+
+const cls = cn('Nav');
+
+export function Nav({ className }) {
+  const page = useContext(Context);
   const site = page.site;
-  const lang = 'ru';
+  const lang = page.lang;
   let result;
 
   const slugger = {
@@ -11,9 +17,9 @@ export function Nav({ model, page }) {
   }
 
   return (
-    <ul style={{ float: 'left' }}>
+    <ul className={cls(null, [className])} style={{ float: 'left' }}>
       {
-        model.filter(function (page) {
+        page.model.filter(function (page) {
           if (!new RegExp('^' + site).test(page.url) || page.nav === false) { return false; }
 
           const levelPage = page.url.split('/').length;
@@ -33,8 +39,8 @@ export function Nav({ model, page }) {
             contents = item.contents || [];
             // slugger = new (require('github-slugger'))();
 
-          return <li className="Nav-Item">
-            <h3 className="Nav-Title">
+          return <li className={cls('Item')}>
+            <h3 className={cls('Title')}>
               {isCurrent ?
                 title :
                 <Link to={item.url}>{title}</Link>
