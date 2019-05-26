@@ -5,6 +5,7 @@ import { cn } from '@bem-react/classname'
 import { Context } from '../Context/Context'
 import { Header } from '../Header/Header'
 import { Nav } from '../Nav/Nav'
+import { Article } from '../Article/Article'
 import { Footer } from '../Footer/Footer'
 
 import './Page.css'
@@ -30,7 +31,7 @@ const Page = (data) => {
             </div>
 
             <div className={cn('Page')('Main')}>
-              MAIN
+                <Article className={cn('Page')('Content')}/>
             </div>
 
             <div className={cn('Page')('side')}>
