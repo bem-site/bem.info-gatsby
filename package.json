@@ -9,7 +9,6 @@
     "gatsby-plugin-intl": "0.1.7",
     "gatsby-plugin-typescript": "2.0.15",
     "gatsby-source-filesystem": "2.0.37",
-    "prop-types": "15.7.2",
     "react": "16.8.6",
     "react-dom": "16.8.6"
   },
