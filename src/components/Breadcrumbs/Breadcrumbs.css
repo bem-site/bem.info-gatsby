@@ -1,0 +1,58 @@
+.Breadcrumbs {
+  padding: 0;
+
+  font-size: 17px;
+  vertical-align: top;
+
+  background: inherit;
+}
+
+.Breadcrumbs-Item {
+  display: inline-block;
+
+  margin: 0 10px 0 0;
+  padding: 0;
+
+  letter-spacing: 1px;
+
+  color: #fff;
+}
+
+.Breadcrumbs-Item::before {
+  margin-right: 11px;
+
+  content: "/";
+
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.Breadcrumbs-Item:first-child::before {
+  display: none;
+}
+
+.Breadcrumbs-Link {
+  text-decoration: none;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  transition: color 0.3s;
+}
+
+.Breadcrumbs-Link:hover {
+  color: #fff;
+}
+
+/*tablet*/
+@media all and (max-width: 780px) {
+  .Breadcrumbs {
+    position: static;
+
+    margin: 5px 8px 0;
+    padding: 0;
+  }
+
+  .Breadcrumbs-Item {
+    margin: 10px 5px 0;
+    padding: 0;
+  }
+}

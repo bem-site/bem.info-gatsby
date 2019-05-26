@@ -1,0 +1,125 @@
+@media print {
+  .Header {
+    display: none;
+  }
+}
+
+.Header_opened .Header-Logo {
+  position: static;
+}
+
+.Header_opened + .Sitemap {
+  display: flex !important;
+}
+
+.Header_opened .Header-Lang,
+.Header_opened .Header-Forum,
+/* Hide all siblings then sitemap is shown */
+.Header_opened ~ div,
+.Header_opened ~ footer {
+  display: none !important;
+}
+
+.Header-Layout {
+  /* search block will position absolutely search field inside header-layout block */
+  position: relative;
+
+  height: 70px;
+
+  white-space: nowrap;
+}
+
+.Header-Logo {
+  position: fixed;
+
+  padding: 23px 30px 22px;
+}
+
+@supports (position: sticky) and (display: grid) {
+  @media (min-width: 1201px) {
+    .Header-Logo {
+      position: static;
+    }
+  }
+}
+
+.Header-Breadcrumbs {
+  position: absolute;
+  top: 1px;
+  left: 90px;
+
+  flex-grow: 1;
+
+  margin: 18px 0 0;
+}
+
+.Header-Forum {
+  float: right;
+
+  margin: 20px -5px 0 10px;
+
+  transition: color 0.3s;
+  text-decoration: none;
+  letter-spacing: 2px;
+
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.Header-Forum:hover {
+  color: #fff;
+}
+
+.Header-Lang {
+  position: relative;
+  z-index: 1;
+
+  float: right;
+
+  margin: 20px 70px 0 46px;
+}
+
+@media (max-width: 1200px) {
+  .Header-Logo {
+    padding: 23px 20px 22px;
+  }
+
+  .Header-Breadcrumbs {
+    left: 90px;
+  }
+}
+
+@media (max-width: 800px) {
+  .Header-Layout {
+    height: auto;
+  }
+
+  .Header-Logo {
+    position: static;
+
+    padding: 13px 15px;
+  }
+
+  .Header-Breadcrumbs {
+    display: none;
+  }
+
+  .Header-Forum {
+    margin-top: 10px;
+  }
+
+  .Header-Lang {
+    margin-top: 10px;
+  }
+
+  .Header_opened {
+    position: static;
+  }
+
+  .Header_opened + .Sitemap {
+    display: block !important;
+  }
+
+  .Header_opened .Header-Layout {
+    display: none;
+  }
+}

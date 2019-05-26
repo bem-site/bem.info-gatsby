@@ -1,0 +1,24 @@
+.Logo {
+  display: inline-block;
+
+  width: 30px;
+  height: 25px;
+}
+
+.Logo[href]:hover .Logo-Logo {
+  fill: #fff;
+}
+
+.Logo-Logo {
+  fill: #fff;
+
+  transition: fill 0.3s;
+}
+
+@supports (position: sticky) and (display: grid) {
+  @media (min-width: 1201px) {
+    .Logo_site_methodology .Logo-Logo {
+      fill: #17a1e6;
+    }
+  }
+}
