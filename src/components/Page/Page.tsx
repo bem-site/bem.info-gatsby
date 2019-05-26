@@ -18,7 +18,7 @@ const Page = (data) => {
         <title>{page.title} / TODO</title>
       </Helmet>
 
-      <div className={cn('Page')({ promo: page.type === 'promo' })}>
+      <div className={cn('Page')({ promo: page.type === 'promo', site: page.bundle })}>
         <Header className={cn('Page')('Head')}/>
         {/* <Sitemap className={cn('Page')('Sitemap')}/> */}
 

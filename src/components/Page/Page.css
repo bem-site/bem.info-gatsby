@@ -13,6 +13,10 @@ body
     text-size-adjust: 100%;
 }
 
+.Page_site_methodology {
+    background: linear-gradient(hsl(200, 82%, 11%) 0%, hsl(200, 82%, 25%) 100%);
+}
+
 .Page-Sitemap
 {
     display: none;
