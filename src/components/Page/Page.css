@@ -1,222 +1,190 @@
-body
-{
-    margin: 0;
+body {
+  margin: 0;
 }
 
-.Page
-{
-    font: 16px/2 Arial, sans-serif;
+.Page {
+  display: flex;
+  flex-direction: column;
 
-    display: flex;
-    flex-direction: column;
-
-    text-size-adjust: 100%;
+  font: 16px/2 Arial, sans-serif;
+  text-size-adjust: 100%;
 }
 
 .Page_site_methodology {
-    background: linear-gradient(hsl(200, 82%, 11%) 0%, hsl(200, 82%, 25%) 100%);
+  background: linear-gradient(hsl(200, 82%, 11%) 0%, hsl(200, 82%, 25%) 100%);
 }
 
-.Page-Sitemap
-{
+.Page-Sitemap {
+  display: none;
+}
+
+.Page-Menu {
+  position: fixed;
+  top: 88px;
+
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  width: 260px;
+  height: calc(100vh - 80px);
+
+  mask-image: linear-gradient(to bottom, #000 90%, rgba(0, 0, 0, 0));
+}
+
+@supports (position: sticky) and (display: grid) {
+  @media (min-width: 1201px) {
+    .Page-Menu {
+      position: sticky;
+      top: 0;
+
+      height: 100vh;
+      margin-top: 13px;
+    }
+  }
+}
+
+.Page:not(.Page_promo) .Page-Main {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: space-between;
+
+  margin-left: 260px;
+
+  border-bottom-left-radius: 10px;
+  background: #fff;
+}
+
+.Page-Head {
+  order: -2;
+}
+
+.Page-Content {
+  padding: 15px 20px 0 48px;
+
+  background: #fff;
+
+  /* background: #fff url(page-content.png) repeat; */
+
+  /* background: #fff url(page-content_dark.gif) repeat; */
+}
+
+.Page-Side {
+  order: -1;
+
+  margin-left: 260px;
+  padding: 20px 20px 10px 48px;
+
+  border-top-left-radius: 10px;
+  background: #fff;
+}
+
+@media (max-width: 1200px) {
+  .Page-Menu {
+    width: 233px;
+
+    font-size: 14px;
+    line-height: 32px;
+  }
+
+  .Page:not(.Page_promo) .Page-Main,
+  .Page-Side {
+    margin-left: 233px;
+  }
+}
+
+@media (max-width: 800px) {
+  .Page:not(.Page_promo) .Page-Main,
+  .Page-Side {
+    margin: 0;
+
+    border-radius: 0;
+  }
+
+  .Page-Sitemap {
+    height: auto;
+    margin-top: 70px;
+  }
+
+  .Page-Menu {
     display: none;
+  }
+
+  .Page-Content {
+    padding: 15px 15px 0;
+  }
+
+  .Page-Side {
+    order: 0;
+
+    padding: 25px 15px 0;
+  }
+
+  .Page-Foot {
+    order: 1;
+  }
 }
 
-.Page-Menu
-{
-    position: fixed;
-    top: 88px;
-
-    overflow: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-
-    width: 260px;
-    height: calc(100vh - 80px);
-
-    mask-image: linear-gradient(to bottom, #000 90%, rgba(0, 0, 0, 0));
+@media print {
+  .Page {
+    font-size: 14px;
+    line-height: 1.5;
+  }
 }
 
-@supports (position: sticky) and (display: grid)
-{
-    @media (min-width: 1201px)
-    {
-        .Page-Menu
-        {
-            position: sticky;
-            top: 0;
+@supports (display: grid) {
+  @media (min-width: 1201px) {
+    .Page:not(.Page_promo) {
+      display: grid;
+      grid-template-rows: 70px 1fr auto;
+      grid-template-columns: 260px minmax(0, 900px) minmax(160px, 1fr);
 
-            height: 100vh;
-            margin-top: 13px;
-        }
-    }
-}
-
-.Page:not(.Page_promo) .Page-Main
-{
-    display: flex;
-    overflow: hidden;
-    flex-direction: column;
-
-    margin-left: 260px;
-
-    border-bottom-left-radius: 10px;
-    background: #fff;
-    justify-content: space-between;
-}
-
-.Page-Head
-{
-    order: -2;
-}
-
-.Page-Content
-{
-    padding: 15px 20px 0 48px;
-
-    background: #fff;
-
-    /* background: #fff url(page-content.png) repeat; */
-
-    /* background: #fff url(page-content_dark.gif) repeat; */
-}
-
-.Page-Side
-{
-    margin-left: 260px;
-    padding: 20px 20px 10px 48px;
-
-    border-top-left-radius: 10px;
-    background: #fff;
-    order: -1;
-}
-
-@media (max-width: 1200px)
-{
-    .Page-Menu
-    {
-        font-size: 14px;
-        line-height: 32px;
-
-        width: 233px;
+      min-height: 100vh;
     }
 
-    .Page:not(.Page_promo) .Page-Main,
-    .Page-Side
-    {
-        margin-left: 233px;
-    }
-}
-
-@media (max-width: 800px)
-{
-    .Page:not(.Page_promo) .Page-Main,
-    .Page-Side
-    {
-        margin: 0;
-
-        border-radius: 0;
+    .Page-Head {
+      grid-column: 1 / 4;
     }
 
-    .Page-Sitemap
-    {
-        height: auto;
-        margin-top: 70px;
+    .Page-Sitemap {
+      grid-column: 1 / 4;
     }
 
-    .Page-Menu
-    {
-        display: none;
+    .Page:not(.Page_promo) .Page-Main {
+      grid-column: 2 / 3;
+
+      margin: 0;
+
+      border-radius: 10px;
     }
 
-    .Page-Content
-    {
-        padding: 15px 15px 0;
+    .Page-Content {
+      flex-grow: 1;
+
+      padding-top: 31px;
     }
 
-    .Page-Side
-    {
-        order: 0;
+    .Page-Side {
+      order: initial;
 
-        padding: 25px 15px 0;
+      margin: 0;
+      padding: 13px 10px 10px 20px;
+
+      background: none;
     }
 
-    .Page-Foot
-    {
-        order: 1;
+    @supports (position: sticky) {
+      .Page-Side {
+        position: sticky;
+        top: 0;
+
+        height: calc(100vh - 30px);
+      }
     }
-}
 
-@media print
-{
-    .Page
-    {
-        font-size: 14px;
-        line-height: 1.5;
+    .Page-Foot {
+      grid-column: 2 / 3;
     }
-}
-
-@supports (display: grid)
-{
-    @media (min-width: 1201px)
-    {
-        .Page:not(.Page_promo)
-        {
-            display: grid;
-
-            min-height: 100vh;
-            grid-template-rows: 70px 1fr auto;
-            grid-template-columns: 260px minmax(0, 900px) minmax(160px, 1fr);
-        }
-
-        .Page-Head
-        {
-            grid-column: 1 / 4;
-        }
-
-        .Page-Sitemap
-        {
-            grid-column: 1 / 4;
-        }
-
-        .Page:not(.Page_promo) .Page-Main
-        {
-            margin: 0;
-
-            border-radius: 10px;
-            grid-column: 2 / 3;
-        }
-
-        .Page-Content
-        {
-            flex-grow: 1;
-
-            padding-top: 31px;
-        }
-
-        .Page-Side
-        {
-            margin: 0;
-            padding: 13px 10px 10px 20px;
-
-            background: none;
-            order: initial;
-        }
-
-        @supports (position: sticky)
-        {
-            .Page-Side
-            {
-                position: sticky;
-                top: 0;
-
-                height: calc(100vh - 30px);
-            }
-        }
-
-        .Page-Foot
-        {
-            grid-column: 2 / 3;
-        }
-    }
+  }
 }
