@@ -3,6 +3,7 @@ module.exports = function ({ block, elem, mod = {} }) {
 import { cn } from '@bem-react/classname'
 
 import { Context } from '../Context/Context'
+import './${block}.css'
 
 const cls = cn('${block}');
 
