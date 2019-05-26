@@ -24,7 +24,7 @@ const Page = (data) => {
         {/* <Sitemap className={cn('Page')('Sitemap')}/> */}
 
         {page.type === 'promo' ?
-          <PromoContent mix={cn('Page')('Main')}/> :
+          {/*<PromoContent className={cn('Page')('Main')}/>*/} :
           <>
             <div className={cn('Page')('Menu')}>
               <Nav className={cn('Page')('Nav')}/>
